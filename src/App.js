@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import GetStartedStep from './steps/GetStartedStep';
-import FirstFormStep from './steps/FirstFormStep';
-import SecondFormStep from './steps/SecondFormStep';
+import DaysStep from './steps/DaysStep';
+import TrainingTypeStep from './steps/TrainingTypeStep';
 import FinallStep from './steps/FinallStep';
 
 import { Switch, Route } from 'react-router-dom';
@@ -17,10 +17,10 @@ class App extends Component{
             <GetStartedStep />
           </Route>
           <Route exact path="/step_1">
-            <FirstFormStep />
+            <DaysStep />
           </Route>
           <Route exact path="/step_2">
-            <SecondFormStep />
+            <TrainingTypeStep />
           </Route>
           <Route exact path="/result">
             <FinallStep />

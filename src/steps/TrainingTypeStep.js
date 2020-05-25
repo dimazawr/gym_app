@@ -2,18 +2,19 @@ import React, {useContext} from 'react';
 import '../App.css';
 import TextBox from '../components/TextBox';
 import Button from '../components/Button';
-import MainForm from '../components/MainForm';
+import RadioGroup from '../components/RadioGroup';
 import Heading from '../components/Heading';
 import {Link} from 'react-router-dom';
 import {GlobalContext} from '../GlobalContext';
 
-function SecondFormStep() {
+function TrainingTypeStep() {
     const context = useContext(GlobalContext)
+    const { handleRadioChange } = context;
     return (
         <div className="text-center">
             <Heading text={"Step 2"}/>
             <TextBox className="mx-auto" text={`Would you like to focus you training on strength or muscle hypertrophy? Choose one of the following options.`}/>
-            <MainForm value1={'Strength'} value2={'Hypertrophy'} handler={context.handlerSecond}/>
+            <RadioGroup value1={'Strength'} value2={'Hypertrophy'} answerNum={"answer_two"} handler={handleRadioChange} />
             <Link to="/step_1">
                 <Button value={'Previous'}/> 
             </Link>
@@ -25,4 +26,4 @@ function SecondFormStep() {
     )
 }
 
-export default SecondFormStep;
+export default TrainingTypeStep;

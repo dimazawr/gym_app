@@ -1,6 +1,7 @@
 import  React from 'react';
 import programs from '../programs_data';
 import TextBox from '../components/TextBox';
+import { MapDataToTable } from './MapDataToTable';
 
 
 function TrainingProgram() {
@@ -28,33 +29,7 @@ function TrainingProgram() {
 
     const description = result['desc'];
     const source = result['ref'];
-    const program = result['days'].map((day, index) => {
-        let [tableHeaders, ...rest] = Object.values(day)
-        let exercisesData = rest.map((exercise, index) => { 
-            return (<tr key={index}>
-                <td >{exercise}</td>
-                </tr>)
-                });
-
-        
-            return (
-                <div className="col-sm">
-                    <div className="table-responsive">
-                        <table className="table">
-                            <thead className="thead-dark">
-                                <tr>
-                                    <th scope="col" key={index}>{tableHeaders}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {exercisesData}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            )
-            })
-
+    const program = MapDataToTable(result['days']);
         
 
         return (

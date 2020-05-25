@@ -11,7 +11,7 @@ const GlobalContext = React.createContext();
 
 
 
-       handleFirstRadioChange = (e) => {
+/*        handleFirstRadioChange = (e) => {
         const target = e.target;
         const value = target.value;
         
@@ -24,7 +24,16 @@ const GlobalContext = React.createContext();
         const value = target.value;
         
         this.setState({answer_two: value})
-      } 
+      }  */
+
+      handleRadioChange = (e) => {
+        e.persist()
+        const target = e.target;
+        const value = target.value;
+        this.setState(prev => ({...prev, ...{
+            [target.name]: value
+        }}))
+      }
 
 
       componentDidUpdate(prevProps,prevState) {
@@ -40,7 +49,7 @@ const GlobalContext = React.createContext();
     render() { 
         return ( 
 
-            <GlobalContext.Provider value={{ state: this.state, handlerFirst: this.handleFirstRadioChange, handlerSecond: this.handleSecondRadioChange }}>
+            <GlobalContext.Provider value={{ state: this.state, handleRadioChange: this.handleRadioChange }}>
                 {this.props.children}
             </GlobalContext.Provider>
 
