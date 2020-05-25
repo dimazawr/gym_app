@@ -10,22 +10,6 @@ const GlobalContext = React.createContext();
      }
 
 
-
-/*        handleFirstRadioChange = (e) => {
-        const target = e.target;
-        const value = target.value;
-        
-        this.setState({answer_one: value})
-
-      }
-
-      handleSecondRadioChange = (e) => {
-        const target = e.target;
-        const value = target.value;
-        
-        this.setState({answer_two: value})
-      }  */
-
       handleRadioChange = (e) => {
         e.persist()
         const target = e.target;
@@ -33,8 +17,8 @@ const GlobalContext = React.createContext();
         this.setState(prev => ({...prev, ...{
             [target.name]: value
         }}))
-      }
-
+      };
+      
 
       componentDidUpdate(prevProps,prevState) {
         if (this.state !== prevState) {
@@ -44,7 +28,7 @@ const GlobalContext = React.createContext();
         // that basically allows user to continue their steps
         const btnNext = document.getElementById("next");
         btnNext.disabled = false;
-      }
+      };
 
     render() { 
         return ( 
