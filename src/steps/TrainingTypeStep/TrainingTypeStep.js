@@ -1,13 +1,13 @@
 import React, {useContext} from 'react';
-import '../App.css';
-import TextBox from '../components/TextBox';
-import Button from '../components/Button';
-import RadioGroup from '../components/RadioGroup';
-import Heading from '../components/Heading';
-import {Link} from 'react-router-dom';
-import {GlobalContext} from '../GlobalContext';
+import '../../App.css';
+import { TextBox } from '../../components/TextBox/TextBox';
+import { Button } from '../../components/Button/Button';
+import { RadioGroup } from '../../components/RadioGroup/RadioGroup';
+import { Heading } from '../../components/Heading/Heading';
+import { Link } from 'react-router-dom';
+import { GlobalContext } from '../../GlobalContext';
 
-function TrainingTypeStep() {
+export const  TrainingTypeStep = () => {
     const context = useContext(GlobalContext)
     const { handleRadioChange } = context;
     return (
@@ -25,5 +25,3 @@ function TrainingTypeStep() {
         </div>
     )
 }
-
-export default TrainingTypeStep;

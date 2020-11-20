@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Heading(props) {
+export const Heading = (props) => {
     return (
       <>
         <h1 className="display-4 mb-5">{props.text}</h1>
@@ -9,4 +9,4 @@ function Heading(props) {
   }
 
 
-export default Heading;
+

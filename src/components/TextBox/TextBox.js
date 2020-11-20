@@ -1,12 +1,10 @@
 import React from 'react';
 
-function TextBox(props) {
+export const TextBox = ({ text }) => {
     return (
       <div className="lead text-wrap">
-        <p>{props.text}</p>
+        <p>{text}</p>
       </div>
     )
   }
 
-
-export default TextBox;
