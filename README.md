@@ -19,6 +19,7 @@ Try it out, it takes less than 3 minutes! https://gym-app.onrender.com/
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Technologies used:
+* TypeScript
 * React:
   * React.Fragment
   * Conditional rendering
@@ -29,6 +30,10 @@ Technologies used:
   * Link
   * Router
 * Bootstrap 4
+
+Tests: 
+* Jest
+* React Testing Library
 
 
 

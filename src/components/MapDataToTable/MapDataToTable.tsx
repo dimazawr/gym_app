@@ -1,7 +1,10 @@
 import React from "react";
+import { IDay } from "../../programs_data";
 
-export const MapDataToTable = (data) => {
-  const table = data.map((day, index) => {
+
+
+export const MapDataToTable = (data: IDay[]):React.ReactNode => {
+  const table = data.map((day: IDay, index: number) => {
     // Splitting data to be able to use it separately, tableHeaders corespond to eg id: day 1 in program_data.js
     let [tableHeaders, ...rest] = Object.values(day);
 

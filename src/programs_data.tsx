@@ -1,4 +1,21 @@
-export default [
+export interface IRoot {
+    name: string
+    desc: string
+    ref: string
+    days: IDay[]
+  }
+  
+  export interface IDay {
+    id: string
+    "exercise 1": string
+    "exercise 2": string
+    "exercise 3": string
+    "exercise 4"?: string
+    "exercise 5"?: string
+  }
+  
+
+export const programs_data:IRoot[] = [
     {
         "name": "strength_long",
         "desc": "The basic principle of the strength focused programs is that you do less repetition during the set, which gives you the possibility to lift heavier weights than you would usually do. There are a lot of different approaches out there, this is just an example. * S/s = Super sets, ** Dl = deadlift",
@@ -91,7 +108,7 @@ export default [
                     "exercise 2" : "Stiff legs Dl's: 3x8",
                     "exercise 3" : "Bench Press: 5x5",
                     "exercise 4" : "Triceps Extention: 3x8",
-                    "exercise 5" : "Dumbell Shoulder Press: 3x10",
+                    "exercise 5" : "Dumbell Shoulder Press: 3x10"
                 },
                 {
                     "id": "Day 2",
@@ -102,6 +119,6 @@ export default [
                     "exercise 5" : "Biceps Curls: 3x10"
                 }
             ]
-    },
+    }
 
 ]

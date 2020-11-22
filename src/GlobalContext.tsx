@@ -1,16 +1,27 @@
 import React, {Component} from 'react';
 
 
-const GlobalContext = React.createContext();
+export interface IState  {
+  answer_one: string,
+  answer_two: string
+}
+
+export interface IContext {
+  state: IState,
+  handleRadioChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+}
+
+
+const GlobalContext = React.createContext({} as IContext);
 
  class GlobalContextProvider extends Component {
-    state = { 
+    state:IState = { 
         answer_one: '', 
         answer_two: '',
      }
 
 
-      handleRadioChange = (e) => {
+      handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.persist()
         const target = e.target;
         const value = target.value;
@@ -20,13 +31,13 @@ const GlobalContext = React.createContext();
       };
       
 
-      componentDidUpdate(prevProps,prevState) {
+      componentDidUpdate(prevState: IState) {
         if (this.state !== prevState) {
           localStorage.setItem('savedState', JSON.stringify(this.state))
         }
 
         // that basically allows user to continue their steps
-        const btnNext = document.getElementById("next");
+        const btnNext = document.getElementById("next") as HTMLButtonElement;
         btnNext.disabled = false;
       };
 

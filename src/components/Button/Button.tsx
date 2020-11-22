@@ -1,7 +1,13 @@
 import React from 'react';
 
 
-export const Button = ({ value, handleClick }) => {
+
+type Props = {
+  value: string,
+  handleClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+}
+
+export const Button: React.FC<Props> = ({ value, handleClick }) => {
 
 
     if(value === 'Reset') {

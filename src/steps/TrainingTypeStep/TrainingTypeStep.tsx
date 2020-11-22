@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import '../../App.css';
 import { TextBox } from '../../components/TextBox/TextBox';
 import { Button } from '../../components/Button/Button';
@@ -7,22 +7,21 @@ import { Heading } from '../../components/Heading/Heading';
 import { Link } from 'react-router-dom';
 import { GlobalContext } from '../../GlobalContext';
 
-export const DaysStep = () => {
-  const context = useContext(GlobalContext);
-  const { handleRadioChange } = context;
+export const  TrainingTypeStep = () => {
+    const context = useContext(GlobalContext)
+    const { handleRadioChange } = context;
     return (
         <div className="text-center">
-            <Heading text={"Step 1"}/>
-            <TextBox className="mx-auto" text={`How many days per week do you want to spend in a gym? Choose one of the following options.`}/>
-            <RadioGroup value1={2} value2={3} answerNum={"answer_one"} handler={handleRadioChange}/>
-            <Link to="/">
+            <Heading text={"Step 2"}/>
+            <TextBox text={`Would you like to focus you training on strength or muscle hypertrophy? Choose one of the following options.`}/>
+            <RadioGroup value1={'Strength'} value2={'Hypertrophy'} answerNum={"answer_two"} handler={handleRadioChange} />
+            <Link to="/step_1">
                 <Button value={'Previous'}/> 
             </Link>
 
-            <Link to="/step_2">
+            <Link to="/result">
                 <Button value={'Next'}/>
             </Link>
-    
         </div>
     )
 }

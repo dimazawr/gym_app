@@ -1,6 +1,13 @@
 import React from 'react';
 
-export const InputRadio = ({ radioName, inputValue, handler }) => {
+
+type Props = {
+  radioName: string,
+  inputValue: string | number
+  handler: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+export const InputRadio:React.FC<Props> = ({ radioName, inputValue, handler }) => {
 
     return (
       <div className="form-check form-check-inline">

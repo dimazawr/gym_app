@@ -1,34 +1,35 @@
 import React from "react";
-import programs from "../../programs_data";
+import { programs_data, IRoot } from "../../programs_data";
 import { TextBox } from "../TextBox/TextBox";
 import { MapDataToTable } from "../MapDataToTable/MapDataToTable";
+import { IState } from "../../GlobalContext"
 
-export const TrainingProgram = () => {
-  let result;
+export const TrainingProgram:React.FC = () => {
+  let result:IRoot | undefined ;
   const valuesFromStorage = localStorage.getItem("savedState");
-  let savedValues = JSON.parse(valuesFromStorage);
+  let savedValues: IState = JSON.parse(valuesFromStorage!);
 
   if (savedValues.answer_one === "3") {
     // handling for the three days per week programs
 
     if (savedValues.answer_two === "Strength") {
-      result = programs.find(({ name }) => name === "strength_long");
+      result = programs_data.find(({ name }) => name === "strength_long")!;
     } else {
-      result = programs.find(({ name }) => name === "hypertrophy_long");
+      result = programs_data.find(({ name }) => name === "hypertrophy_long")!;
     }
   } else if (savedValues.answer_one === "2") {
     // handling for the two days per week programs
 
     if (savedValues.answer_two === "Strength") {
-      result = programs.find(({ name }) => name === "strength_short");
+      result = programs_data.find(({ name }) => name === "strength_short")!;
     } else {
-      result = programs.find(({ name }) => name === "hypertrophy_short");
+      result = programs_data.find(({ name }) => name === "hypertrophy_short")!;
     }
   }
 
-  const description = result["desc"];
-  const source = result["ref"];
-  const program = MapDataToTable(result["days"]);
+  const description = result!["desc"];
+  const source = result!["ref"];
+  const program = MapDataToTable(result!["days"]);
 
   return (
     <>
