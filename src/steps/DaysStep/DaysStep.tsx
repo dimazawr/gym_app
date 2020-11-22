@@ -15,13 +15,15 @@ export const DaysStep = () => {
             <Heading text={"Step 1"}/>
             <TextBox text={`How many days per week do you want to spend in a gym? Choose one of the following options.`}/>
             <RadioGroup value1={2} value2={3} answerNum={"answer_one"} handler={handleRadioChange}/>
-            <Link to="/">
-                <Button value={'Previous'}/> 
-            </Link>
+            <div className="mt-5">
+                <Link to="/" className="mr-5" >
+                    <Button value={'Previous'}/> 
+                </Link>
 
-            <Link to="/step_2">
-                <Button value={'Next'}/>
-            </Link>
+                <Link to="/step_2">
+                    <Button value={'Next'}/>
+                </Link>
+            </div>
     
         </div>
     )
