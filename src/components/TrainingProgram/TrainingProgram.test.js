@@ -2,10 +2,10 @@ import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { TrainingProgram } from "./TrainingProgram";
-import programs from "../../programs_data";
+import { programs_data } from "../../programs_data";
 
 
-const strengthProgram = programs.find(({ name }) => name === "strength_long");
+const strengthProgram = programs_data.find(({ name }) => name === "strength_long");
 
 
 
